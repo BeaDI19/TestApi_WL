@@ -1,2 +1,2 @@
-# GoodFood-gRPC-API-Gateway
-Good Food API Gateway using gRPC
+# GoodFood-Http-API-Gateway
+Good Food Http API - Entry point of GoodFood listening to Http request
