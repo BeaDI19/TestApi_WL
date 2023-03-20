@@ -1,13 +1,13 @@
 //importing modules
-const express = require('express')
+const express = require('express');
 const { createServer } = require("http");
 const WebSocket = require('ws');
 const cookieParser = require('cookie-parser')
-const db = require('./models')
 
 //Defining routes
 const userRoutes = require ('./routes/userRoutes');
 const categoryRoutes = require ('./routes/categoryRoutes');
+
 const ip = require('ip');
 const host = ip.address();
 const swaggerUi = require('swagger-ui-express');
@@ -24,16 +24,20 @@ const port = process.env.PORT || 3000
 const app = express()
 
 //middleware
-app.use(express.json())
+app.use(express.json());
 app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
-app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // model.sync(options): https://sequelize.org/docs/v6/core-concepts/model-basics/#model-synchronization
 // User.sync() - This creates the table if it doesn't exist (and does nothing if it already exists)
+
+/*
 db.sequelize.sync().then(() => {
   console.log("db has been re sync")
-})
+});
+*/
+
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*');

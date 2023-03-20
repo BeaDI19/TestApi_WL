@@ -1,6 +1,5 @@
 //importing modules
 const jwt = require("jsonwebtoken");
-const db = require("../models");
 require('dotenv').config();
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -9,8 +8,6 @@ const WebSocket = require("ws");
 const { ACCESS_TOKEN_SECRET, ACCESS_TOKEN_EXPIRY, REFRESH_TOKEN_SECRET, REFRESH_TOKEN_EXPIRY } = process.env;
 
 // Assigning users to the variable Category
-const Category = db.categories;
-
 const broadcast = (clients, method, message) => {
     clients.forEach((client) => {
         if (client.readyState === WebSocket.OPEN) {
