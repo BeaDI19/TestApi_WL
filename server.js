@@ -50,8 +50,9 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-app.use('/api', userRoutes)
-app.use('/api', categoryRoutes)
+app.use(indexRoutes)
+app.use(userRoutes)
+app.use(categoryRoutes)
 
 const server = createServer(app);
 //listening to server connection
