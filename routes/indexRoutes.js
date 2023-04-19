@@ -1,11 +1,9 @@
 //importing modules
 const express = require('express')
-const indexController = require('../controllers/indexController')
-const { pong } = indexController
-
-const router = express.Router()
+const router = express.Router();
+const { pong } = require('../controllers/indexController');
 
 //ping -> pong endpoint
-router.post('/ping', pong)
+router.get('/ping', function(req,res){pong(req,res)})
 
-module.exports = router
+module.exports = router;

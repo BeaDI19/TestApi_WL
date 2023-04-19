@@ -1,10 +1,11 @@
-//getAll categories
-const pong = async (req, res) => {
+//pong
+this.pong = (req, res) => {
     try 
     { 
-        res.status(200).send("pong");
+        return res.json({message: "pong"});
     } 
     catch (error) {
         console.log('ping - pong failure (but API respond): ', error);
+        return res.json('ping - pong failure (but API respond): ', error);
     }
 }

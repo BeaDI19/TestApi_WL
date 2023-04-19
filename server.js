@@ -5,6 +5,7 @@ const WebSocket = require('ws');
 const cookieParser = require('cookie-parser')
 
 //Defining routes
+const indexRoutes = require ('./routes/indexRoutes');
 const userRoutes = require ('./routes/userRoutes');
 const categoryRoutes = require ('./routes/categoryRoutes');
 
@@ -50,9 +51,10 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-app.use(indexRoutes)
-app.use(userRoutes)
-app.use(categoryRoutes)
+
+app.use(indexRoutes);
+app.use(userRoutes);
+app.use(categoryRoutes);
 
 const server = createServer(app);
 //listening to server connection
