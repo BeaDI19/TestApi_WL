@@ -1,0 +1,5 @@
+{
+  "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"],
+  "appService.defaultWebAppToDeploy": "/subscriptions/544dc073-cc43-42fd-bcc3-fb11098f1484/resourceGroups/rg-goodfood2-dev/providers/Microsoft.Web/sites/web-goodfood2-dev",
+  "appService.deploySubpath": "."
+}
