@@ -9,3 +9,6 @@ this.pong = (req, res) => {
         return res.json('ping - pong failure (but API respond): ', error);
     }
 }
+
+//autre route pour l'api
+//TODO faire les routes...
